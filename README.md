@@ -1,8 +1,6 @@
 # Apartment
 
-[![Gem Version](https://badge.fury.io/rb/ros-apartment.svg)](https://badge.fury.io/rb/apartment)
-[![Code Climate](https://api.codeclimate.com/v1/badges/b0dc327380bb8438f991/maintainability)](https://codeclimate.com/github/rails-on-services/apartment/maintainability)
-[![Build Status](https://travis-ci.org/rails-on-services/apartment.svg?branch=development)](https://travis-ci.org/rails-on-services/apartment)
+[![Gem Version](https://badge.fury.io/rb/puzzle-apartment.svg)](https://badge.fury.io/rb/apartment)
 
 *Multitenancy for Rails and ActiveRecord*
 
@@ -12,19 +10,18 @@ but still allow some data to exist in a common tenant, Apartment can help.
 
 ## Apartment drop in replacement gem
 
-After having reached out via github issues and email directly, no replies ever
-came. Since we wanted to upgrade our application to Rails 6 we decided to fork
-and start some development to support Rails 6. Because we don't have access
+Nor the orginal [apartment](https://github.com/influitive/apartment) gem nor
+the Rails 6 for by [ros-apartment](https://github.com/rails-on-services/apartment)
+are maintained anymore.
+
+Since we wanted to upgrade our application to Rails 7.1 we decided to fork
+and start some development to support Rails 7.1. Because we don't have access
 to the apartment gem itself, the solution was to release it under a different
 name but providing the exact same API as it was before.
 
-## Help wanted
+We maintain this gem for our own projects at the moment but would love to see
+a living community fork showing up again.
 
-We were never involved with the development of Apartment gem in the first place
-and this project started out of our own needs. We will be more than happy
-to collaborate to maintain the gem alive and supporting the latest versions
-of ruby and rails, but your help is appreciated. Either by reporting bugs you
-may find or proposing improvements to the gem itself. Feel free to reach out.
 
 ## Installation
 
@@ -33,7 +30,7 @@ may find or proposing improvements to the gem itself. Feel free to reach out.
 Add the following to your Gemfile:
 
 ```ruby
-gem 'ros-apartment', require: 'apartment'
+gem 'puzzle-apartment', require: 'apartment'
 ```
 
 Then generate your `Apartment` config file using
@@ -637,6 +634,7 @@ $ APARTMENT_DISABLE_INIT=true DATABASE_URL=postgresql://localhost:1234/buk_devel
   * Copy them into the same directory but with the name `database.yml`
   * Edit them to fit your own settings
 * Rake tasks (see the Rakefile) will help you setup your dbs necessary to run tests
+* To run tests without Mysql, call `rspec -t ~database:mysql`
 * Please issue pull requests to the `development` branch. All development happens here, master is used for releases.
 * Ensure that your code is accompanied with tests. No code will be merged without tests
 

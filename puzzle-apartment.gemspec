@@ -4,7 +4,7 @@ $LOAD_PATH << File.expand_path('lib', __dir__)
 require 'apartment/version'
 
 Gem::Specification.new do |s|
-  s.name = 'ros-apartment'
+  s.name = 'puzzle-apartment'
   s.version = Apartment::VERSION
 
   s.authors       = ['Ryan Brunner', 'Brad Robertson', 'Rui Baltazar']
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
 
-  s.homepage = 'https://github.com/rails-on-services/apartment'
+  s.homepage = 'https://github.com/puzzle/apartment'
   s.licenses = ['MIT']
 
   s.add_dependency 'activerecord', '>= 5.0.0', '< 7.2'
