@@ -13,6 +13,7 @@ AllCops:
     - spec/schemas/**/*.rb
 
   NewCops: enable
+  SuggestExtensions: false
 
 Gemspec/RequiredRubyVersion:
   Exclude:
