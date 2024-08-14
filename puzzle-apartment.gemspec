@@ -26,11 +26,16 @@ Gem::Specification.new do |s|
 
   s.homepage = 'https://github.com/puzzle/apartment'
   s.licenses = ['MIT']
+  s.metadata = {
+    'github_repo' => 'ssh://github.com/puzzle/apartment'
+  }
 
-  s.add_dependency 'activerecord', '>= 6.1.0', '< 7.2'
-  s.add_dependency 'parallel', '>= 1.10'
-  s.add_dependency 'public_suffix', '>= 2.0.5'
-  s.add_dependency 'rack', '>= 1.3.6'
+  s.required_ruby_version = '>= 3.1', '<= 3.4'
+
+  s.add_dependency 'activerecord', '>= 6.1.0', '<= 8.1'
+  s.add_dependency 'parallel', '< 2.0'
+  s.add_dependency 'public_suffix', '>= 2.0.5', '< 6.0'
+  s.add_dependency 'rack', '>= 1.3.6', '< 4.0'
 
   s.add_development_dependency 'appraisal', '~> 2.2'
   s.add_development_dependency 'bundler', '>= 1.3', '< 3.0'
