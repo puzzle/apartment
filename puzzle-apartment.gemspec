@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/puzzle/apartment'
   s.licenses = ['MIT']
 
-  s.add_dependency 'activerecord', '>= 6.1.0', '< 7.2'
+  s.add_dependency 'activerecord', '>= 6.1.0', '< 7.3'
   s.add_dependency 'parallel', '>= 1.10'
   s.add_dependency 'public_suffix', '>= 2.0.5'
   s.add_dependency 'rack', '>= 1.3.6'

@@ -14,8 +14,8 @@ Nor the orginal [apartment](https://github.com/influitive/apartment) gem nor
 the Rails 6 for by [ros-apartment](https://github.com/rails-on-services/apartment)
 are maintained anymore.
 
-Since we wanted to upgrade our application to Rails 7.1 we decided to fork
-and start some development to support Rails 7.1. Because we don't have access
+Since we wanted to upgrade our application to Rails 7.2 we decided to fork
+and start some development to support Rails 7.2. Because we don't have access
 to the apartment gem itself, the solution was to release it under a different
 name but providing the exact same API as it was before.
 
