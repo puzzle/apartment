@@ -15,6 +15,7 @@ require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(spec: %w[db:copy_credentials db:test:prepare]) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
+  spec.rspec_opts = "--tag ~database:#{ENV['DB'] == 'pg' ? 'mysql' : 'postgresql'}" if ENV['DB'].present?
   # spec.rspec_opts = '--order rand:47078'
 end
 
@@ -59,6 +60,8 @@ namespace :postgres do
 
   desc 'Build the PostgreSQL test databases'
   task :build_db do
+    next if ENV['DB'] && ENV['DB'] != 'pg'
+
     params = []
     params << '-E UTF8'
     params << pg_config['database']
@@ -77,6 +80,8 @@ namespace :postgres do
 
   desc 'drop the PostgreSQL test database'
   task :drop_db do
+    next if ENV['DB'] && ENV['DB'] != 'pg'
+
     puts "dropping database #{pg_config['database']}"
     params = []
     params << pg_config['database']
@@ -93,6 +98,8 @@ namespace :mysql do
 
   desc 'Build the MySQL test databases'
   task :build_db do
+    next if ENV['DB'] && ENV['DB'] != 'mysql'
+
     params = []
     params << "-h #{my_config['host']}" if my_config['host']
     params << "-u #{my_config['username']}" if my_config['username']
@@ -109,6 +116,8 @@ namespace :mysql do
 
   desc 'drop the MySQL test database'
   task :drop_db do
+    next if ENV['DB'] && ENV['DB'] != 'mysql'
+
     puts "dropping database #{my_config['database']}"
     params = []
     params << "-h #{my_config['host']}" if my_config['host']
