@@ -62,11 +62,14 @@ workflows:
       - build:
           matrix:
             parameters:
-              ruby_version: ["ruby:3.0.6", "ruby:3.1.4", "ruby:3.2.2"]
+              ruby_version: ["ruby:3.1.4", "ruby:3.2.2", "ruby:3.3.6"]
               gemfile:
                 [
-                  "gemfiles/rails_6_1.gemfile",
                   "gemfiles/rails_7_0.gemfile",
                   "gemfiles/rails_7_1.gemfile",
                   "gemfiles/rails_7_2.gemfile",
+                  "gemfiles/rails_8_0.gemfile",
                 ]
+            exclude:
+              - ruby_version: "ruby:3.1.4"
+                gemfile: "gemfiles/rails_8_0.gemfile"

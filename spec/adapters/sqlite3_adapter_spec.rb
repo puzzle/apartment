@@ -24,7 +24,8 @@ describe Apartment::Adapters::Sqlite3Adapter, database: :sqlite do
       it_behaves_like 'a connection based apartment adapter'
 
       after(:all) do
-        File.delete(Apartment::Test.config['connections']['sqlite']['database'])
+        db_file = Apartment::Test.config['connections']['sqlite']['database']
+        File.delete(db_file) if File.exist?(db_file)
       end
     end
 
